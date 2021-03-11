@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, {useState} from 'react';
-import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
+import { Button, StyleSheet, Text, TextInput, View, ScrollView } from 'react-native';
 
 export default function App() {
   
@@ -26,9 +26,9 @@ export default function App() {
           onPress={addTodoList}
         />
       </View>
-      <View>
-        <Text>List of Todos</Text>
-      </View>
+      <ScrollView>
+        {todoList.map(todo => <View key={todoItem} style={styles.todoItem}><Text>{todo}</Text></View>)}
+      </ScrollView>
     </View>
   );
 }
@@ -43,5 +43,14 @@ const styles = StyleSheet.create({
     borderColor: 'black',
     marginBottom: 10,
     borderWidth: 1,
-  }
+  },
+
+  todoItem: {
+    marginTop: 10,
+    padding: 20,
+    backgroundColor: '#f2f2f2',
+    borderRadius: 10,
+    borderWidth: 1,
+    borderColor: 'gray',
+  },
 });
