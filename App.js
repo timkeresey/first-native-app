@@ -15,7 +15,7 @@ export default function App() {
 
   return (
     <View>
-      <Header />
+      <Header title='Todo List' />
       <View style={styles.container}>
         <View>
           <StatusBar style="auto" />

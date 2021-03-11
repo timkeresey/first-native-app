@@ -1,12 +1,12 @@
 import React from 'react';
 import {View, StyleSheet, Text} from 'react-native';
 
-const Header = () => {
+const Header = props => {
 
     return (
         <View style={styles.header}>
             <Text style={styles.headerTitle}>
-                Todo App
+                {props.title}
             </Text>
         </View>
     )
